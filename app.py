@@ -26,13 +26,28 @@ print(date_options)
 # date_filter = df[df['Date']=='3/3/2020']
 # print(date_filter)
 
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
+
 app = dash.Dash()
 
+app.css.append_css({
+    "external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"
+})
+
 app.layout = html.Div([
-    dcc.Dropdown(id='date-picker',value=min(date_list),options=date_options),
-    dcc.Graph(id='memory'),
-    dcc.Graph(id='cpu'),
-    dcc.Graph(id='response')
+    html.H1('Server Monitoring CSV Visualization'),
+    html.Div([dcc.Dropdown(id='date-picker',value=min(date_list),options=date_options)]),
+    html.Div([
+        html.Div([
+            html.Div([dcc.Graph(id='memory')],id='mem-div'),
+            html.Div([dcc.Graph(id='cpu')],id='cpu-div')],
+        id='row')
+    ],id='table'),
+    html.Div([dcc.Graph(id='response')]),
+
 ])
 
 

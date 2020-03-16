@@ -1,0 +1,43 @@
+body {
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 5%;
+margin-bottom: 5%;
+background-color: #36B1BF;
+}
+
+#table{
+width: 90%;
+display: table;
+}
+
+
+#row{
+display: table-row
+}
+
+#mem-div{
+width: 550px;
+display: table-cell;
+}
+
+
+#cpu-div{
+width: 550px;
+display: table-cell;
+}
+
+
+#memory > div:nth-child(1){
+margin-top: 15px;
+}
+
+#cpu > div:nth-child(1) > div:nth-child(1){
+margin-top: 15px;
+margin-left: 15px;
+margin-right: 5%;
+}
+
+#response > div:nth-child(1) > div:nth-child(1){
+margin-top: 16px;
+}
